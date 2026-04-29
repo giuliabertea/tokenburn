@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(openspec new *)",
+      "Bash(openspec status *)",
+      "Bash(openspec instructions *)",
+      "Bash(npm install *)",
+      "Bash(npm show *)",
+      "Bash(npx -w packages/cli tsc --noEmit)",
+      "Bash(npx -w packages/dashboard tsc --noEmit)",
+      "Bash(npx vitest *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f\\\\\"Total: {d['progress']['total']}, Complete: {d['progress']['complete']}, Remaining: {d['progress']['remaining']}\\\\\"\\)\")",
+      "Bash(node -e \"const d=JSON.parse\\(require\\('fs'\\).readFileSync\\('/dev/stdin','utf8'\\)\\); console.log\\('Total:',d.progress.total,'Complete:',d.progress.complete,'Remaining:',d.progress.remaining\\)\")"
+    ]
+  }
+}

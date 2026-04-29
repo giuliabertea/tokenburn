@@ -1,0 +1,48 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`compress — Rule 3: CRUD shorthand > replaces "create a new user" 1`] = `"POST /user in the system"`;
+
+exports[`compress — Rule 3: CRUD shorthand > replaces "get all users" with GET /users 1`] = `"GET /users from the database"`;
+
+exports[`compress — Rule 4: filler removal > removes "make sure to" 1`] = `"Handle errors gracefully."`;
+
+exports[`compress — Rule 4: filler removal > removes "note that" 1`] = `"This endpoint requires authentication."`;
+
+exports[`compress — Rule 4: filler removal > removes "please" at start of sentence 1`] = `"Validate the input before sending."`;
+
+exports[`compress — Rule 4: filler removal > removes multiple fillers in one line 1`] = `"Validate the form."`;
+
+exports[`compress — Rule 5: deduplication > removes duplicate constraint lines 1`] = `
+"## Section A
+- Validate input
+- Return 200 on success
+
+## Section B
+- Return 404 if not found"
+`;
+
+exports[`compress — code block preservation > does not modify fenced code block content 1`] = `
+"\`\`\`typescript
+// userName // user name
+const userName = "test"; // userName
+\`\`\`"
+`;
+
+exports[`compress — combined rules > applies all rules to a realistic spec excerpt 1`] = `
+"## Overview
+
+Implement the following.
+
+The system should GET /users and return them.
+
+- Validate input
+- Handle errors
+
+## Details
+
+Handle edge cases.
+
+\`\`\`typescript
+const userId: string = req.params.id; // userId
+\`\`\`"
+`;

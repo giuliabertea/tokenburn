@@ -1,0 +1,22 @@
+{
+  "name": "tokenburn",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "dev": "concurrently \"npm run dev:cli\" \"npm run dev:dashboard\"",
+    "dev:cli": "npm run dev --workspace=packages/cli",
+    "dev:dashboard": "npm run dev --workspace=packages/dashboard",
+    "build": "npm run build --workspace=packages/cli && npm run build --workspace=packages/dashboard",
+    "test": "vitest run",
+    "seed": "tsx scripts/seed.ts",
+    "link": "npm run build --workspace=packages/cli && cd packages/cli && npm link"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}

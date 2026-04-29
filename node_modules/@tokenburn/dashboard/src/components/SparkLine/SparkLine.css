@@ -1,0 +1,17 @@
+.sparkline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sparkline__title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.sparkline svg {
+  display: block;
+}
