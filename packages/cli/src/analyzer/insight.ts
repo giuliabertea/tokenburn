@@ -79,5 +79,8 @@ export function generateInsight(session: Session, history: Session[]): string {
   }
 
   const explanation = PATTERN_EXPLANATIONS[topPattern];
+  if (occurrences === 0) {
+    return `New pattern detected: "${topPattern}" — ${explanation} (${efficiencyNote}). Watch for recurrence; if it appears again, switch to \`${template}\`.`;
+  }
   return `Top waste: "${topPattern}" — ${explanation} (${efficiencyNote}). This is the 2nd time you've hit this pattern; if it recurs, switch to \`${template}\`.`;
 }

@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/syne": "^5.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

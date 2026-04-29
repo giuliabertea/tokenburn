@@ -27,7 +27,20 @@ export async function runCompress(
     return;
   }
 
-  const outPath = opts.output ?? file;
+  let outPath: string;
+  if (opts.output) {
+    outPath = opts.output;
+  } else {
+    const { default: inquirer } = await import('inquirer');
+    const { confirm } = await inquirer.prompt<{ confirm: boolean }>([
+      { type: 'confirm', name: 'confirm', message: `Overwrite ${file}?`, default: false },
+    ]);
+    if (!confirm) {
+      console.log(chalk.dim('Aborted.'));
+      return;
+    }
+    outPath = file;
+  }
   writeFileSync(outPath, compressed, 'utf-8');
   console.log(chalk.green(`✓ Written to ${outPath}`));
   console.log(chalk.dim(`  Tokens: ${tokensBefore} → ${tokensAfter} (-${savingsPct}%)`));
